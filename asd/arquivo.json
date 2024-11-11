@@ -1,0 +1,64 @@
+{
+    "categorias": [
+      {
+        "nome": "Categoria 1",
+        "servicos": [
+          {
+            "titulo": "Serviço 1",
+            "descricao": "Descrição do Serviço 1"
+          },
+          {
+            "titulo": "Serviço 2",
+            "descricao": "Descrição do Serviço 2"
+          },
+          {
+            "titulo": "Serviço 3",
+            "descricao": "Descrição do Serviço 3"
+          },
+          {
+            "titulo": "Serviço 4",
+            "descricao": "Descrição do Serviço 4"
+          },
+          {
+            "titulo": "Serviço 5",
+            "descricao": "Descrição do Serviço 5"
+          }
+        ]
+      },
+      {
+        "nome": "Categoria 2",
+        "servicos": [
+          {
+            "titulo": "Serviço A",
+            "descricao": "Descrição do Serviço A"
+          },
+          {
+            "titulo": "Serviço B",
+            "descricao": "Descrição do Serviço B"
+          },
+          {
+            "titulo": "Serviço C",
+            "descricao": "Descrição do Serviço C"
+          },
+          {
+            "titulo": "Serviço D",
+            "descricao": "Descrição do Serviço D"
+          }
+        ]
+      },
+      {
+        "nome": "Categoria 3",
+        "servicos": [
+          {
+            "titulo": "Serviço X",
+            "descricao": "Descrição do Serviço X"
+          },
+          {
+            "titulo": "Serviço Y",
+            "descricao": "Descrição do Serviço Y"
+          }
+        ]
+      }
+    ]
+  }
+  
