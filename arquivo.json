@@ -1,0 +1,365 @@
+{
+    "secretarias": [
+        {
+            "nome": "SADM - Secretaria Municipal de Adiministração",
+            "servicos": [
+                {
+                    "titulo": "asdasd",
+                    "descricao": "aaaa",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 1.",
+                    "publico_alvo": "Público-alvo do serviço 1.",
+                    "requisitos": "Requisitos para utilizar o serviço 1.",
+                    "etapas_processamento": "Etapas do processamento do serviço 1.",
+                    "custo": "Custo do serviço 1.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 1.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 1.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 1.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 1.",
+                    "legislacao": "Legislação relacionada ao serviço 1.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 1.",
+                    "outras_informacoes": ""
+                },
+                {
+                    "titulo": "fff",
+                    "descricao": "Descrição geral do serviço 2.",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 2.",
+                    "publico_alvo": "Público-alvo do serviço 2.",
+                    "requisitos": "Requisitos para utilizar o serviço 2.",
+                    "etapas_processamento": "Etapas do processamento do serviço 2.",
+                    "custo": "Custo do serviço 2.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 2.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 2.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 2.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 2.",
+                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 2.",
+                    "outras_informacoes": "Outras informações sobre o serviço 2."
+                },
+                {
+                    "titulo": "44444444444",
+                    "descricao": "Descrição geral do serviço 2.",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 2.",
+                    "publico_alvo": "Público-alvo do serviço 2.",
+                    "requisitos": "Requisitos para utilizar o serviço 2.",
+                    "etapas_processamento": "Etapas do processamento do serviço 2.",
+                    "custo": "Custo do serviço 2.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 2.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 2.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 2.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 2.",
+                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 2.",
+                    "outras_informacoes": "Outras informações sobre o serviço 2."
+                },
+                {
+                    "titulo": "111111111111",
+                    "descricao": "Descrição geral do serviço 2.",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 2.",
+                    "publico_alvo": "Público-alvo do serviço 2.",
+                    "requisitos": "Requisitos para utilizar o serviço 2.",
+                    "etapas_processamento": "Etapas do processamento do serviço 2.",
+                    "custo": "Custo do serviço 2.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 2.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 2.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 2.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 2.",
+                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 2.",
+                    "outras_informacoes": "Outras informações sobre o serviço 2."
+                },
+                {
+                    "titulo": "aaaafff",
+                    "descricao": "Descrição geral do serviço 2.",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 2.",
+                    "publico_alvo": "Público-alvo do serviço 2.",
+                    "requisitos": "Requisitos para utilizar o serviço 2.",
+                    "etapas_processamento": "Etapas do processamento do serviço 2.",
+                    "custo": "Custo do serviço 2.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 2.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 2.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 2.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 2.",
+                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 2.",
+                    "outras_informacoes": "Outras informações sobre o serviço 2."
+                },
+                {
+                    "titulo": "zzzzz",
+                    "descricao": "Descrição geral do serviço 2.",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 2.",
+                    "publico_alvo": "Público-alvo do serviço 2.",
+                    "requisitos": "Requisitos para utilizar o serviço 2.",
+                    "etapas_processamento": "Etapas do processamento do serviço 2.",
+                    "custo": "Custo do serviço 2.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 2.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 2.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 2.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 2.",
+                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 2.",
+                    "outras_informacoes": "Outras informações sobre o serviço 2."
+                },
+                {
+                    "titulo": "vvvvvvv",
+                    "descricao": "Descrição geral do serviço 2.",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 2.",
+                    "publico_alvo": "Público-alvo do serviço 2.",
+                    "requisitos": "Requisitos para utilizar o serviço 2.",
+                    "etapas_processamento": "Etapas do processamento do serviço 2.",
+                    "custo": "Custo do serviço 2.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 2.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 2.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 2.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 2.",
+                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 2.",
+                    "outras_informacoes": "Outras informações sobre o serviço 2."
+                },
+                {
+                    "titulo": "ffffffff",
+                    "descricao": "Descrição geral do serviço 2.",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 2.",
+                    "publico_alvo": "Público-alvo do serviço 2.",
+                    "requisitos": "Requisitos para utilizar o serviço 2.",
+                    "etapas_processamento": "Etapas do processamento do serviço 2.",
+                    "custo": "Custo do serviço 2.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 2.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 2.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 2.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 2.",
+                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 2.",
+                    "outras_informacoes": "Outras informações sobre o serviço 2."
+                }
+            ]
+        },
+        {
+            "nome": "SEDUC - Secretaria Municipal de Educação",
+            "servicos": [
+                {
+                    "titulo": "Teste",
+                    "descricao": "aaaa",
+                    "orgao_responsavel": "Teste aqui.",
+                    "publico_alvo": "aaaaaaaaaaaaaaaaaaaaaaaaa.",
+                    "requisitos": "ssssssssssssssss.",
+                    "etapas_processamento": "asdasdasdasdasdas.",
+                    "custo": "Custo do serviço 1.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 1.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 1.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 1.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 1.",
+                    "legislacao": "Legislação relacionada ao serviço 1.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 1.",
+                    "outras_informacoes": "Outras informações sobre o serviço 1."
+                },
+                {
+                    "titulo": "Teste 23123123",
+                    "descricao": "Descrição geral do serviço 2.",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 2.",
+                    "publico_alvo": "Público-alvo do serviço 2.",
+                    "requisitos": "Requisitos para utilizar o serviço 2.",
+                    "etapas_processamento": "Etapas do processamento do serviço 2.",
+                    "custo": "Custo do serviço 2.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 2.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 2.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 2.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 2.",
+                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 2.",
+                    "outras_informacoes": "Outras informações sobre o serviço 2."
+                }
+            ]
+        },
+        {
+            "nome": "SEINFRA - Secretaria Municipal de Infraestrutura",
+            "servicos": [
+                {
+                    "titulo": "Iluminação Pública",
+                    "descricao": "Serviço referente a manutenção e instalação de iluminação pública provido pelo município para garantir segurança e bem-estar nas vias e espaços públicos.",
+                    "orgao_responsavel": "Secretaria Municipal de Infraestrutura",
+                    "publico_alvo": "Cidadão",
+                    "requisitos": "Preencher o formulário de solicitação de reparo ou instalação, com endereço completo e descrição do problema.",
+                    "etapas_processamento": "1. Recebimento da solicitação. 2. Análise da demanda pela equipe responsável. 3. Agendamento da visita técnica para manutenção ou instalação. 4. Execução do serviço.",
+                    "custo": "Gratuito para o cidadão.",
+                    "prazo_maximo": "Até 10 dias úteis após o recebimento da solicitação.",
+                    "canais_comunicacao": "Telefone 0800-123-4567, e-mail atendimento@municipio.gov.br, aplicativo oficial da prefeitura.",
+                    "manifestacoes_usuario": "Ouvidoria municipal disponível via telefone 0800-123-7890 e plataforma online.",
+                    "compromisso_atendimento": "Garantir atendimento às solicitações em até 10 dias úteis, com qualidade e eficácia.",
+                    "legislacao": "Lei Municipal nº 1234/2021, que regulamenta os serviços de iluminação pública.",
+                    "equipe_responsavel": "Equipe da Divisão de Iluminação Pública da Secretaria Municipal de Infraestrutura.",
+                    "outras_informacoes": "Em caso de chuva ou condições climáticas adversas, o prazo pode ser estendido para garantir a segurança da equipe técnica."
+                    
+                },
+                {
+                    "titulo": "AÇLSFLAÇSMFLAÇSMF 2",
+                    "descricao": "Descrição geral do serviço 2.",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 2.",
+                    "publico_alvo": "Público-alvo do serviço 2.",
+                    "requisitos": "Requisitos para utilizar o serviço 2.",
+                    "etapas_processamento": "Etapas do processamento do serviço 2.",
+                    "custo": "Custo do serviço 2.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 2.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 2.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 2.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 2.",
+                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 2.",
+                    "outras_informacoes": "Outras informações sobre o serviço 2."
+                }
+            ]
+        },
+        {
+            "nome": "SMFPC - Secretaria Municipal de Finanças, Planejamento e Controle",
+            "servicos": [
+                {
+                    "titulo": "MXCNVM,XNCVM",
+                    "descricao": "aaaa",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 1.",
+                    "publico_alvo": "Público-alvo do serviço 1.",
+                    "requisitos": "Requisitos para utilizar o serviço 1.",
+                    "etapas_processamento": "Etapas do processamento do serviço 1.",
+                    "custo": "Custo do serviço 1.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 1.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 1.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 1.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 1.",
+                    "legislacao": "Legislação relacionada ao serviço 1.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 1.",
+                    "outras_informacoes": "Outras informações sobre o serviço 1."
+                },
+                {
+                    "titulo": "1565165162221 2",
+                    "descricao": "Descrição geral do serviço 2.",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 2.",
+                    "publico_alvo": "Público-alvo do serviço 2.",
+                    "requisitos": "Requisitos para utilizar o serviço 2.",
+                    "etapas_processamento": "Etapas do processamento do serviço 2.",
+                    "custo": "Custo do serviço 2.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 2.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 2.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 2.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 2.",
+                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 2.",
+                    "outras_informacoes": "Outras informações sobre o serviço 2."
+                }
+            ]
+        },
+        {
+            "nome": "SMS - Secretaria Municipal de Saúde",
+            "servicos": [
+                {
+                    "titulo": ";as,d;.as,d;.as",
+                    "descricao": "aaaa",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 1.",
+                    "publico_alvo": "Público-alvo do serviço 1.",
+                    "requisitos": "Requisitos para utilizar o serviço 1.",
+                    "etapas_processamento": "Etapas do processamento do serviço 1.",
+                    "custo": "Custo do serviço 1.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 1.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 1.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 1.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 1.",
+                    "legislacao": "Legislação relacionada ao serviço 1.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 1.",
+                    "outras_informacoes": "Outras informações sobre o serviço 1."
+                },
+                {
+                    "titulo": "~]asçd~]asçd~] 2",
+                    "descricao": "Descrição geral do serviço 2.",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 2.",
+                    "publico_alvo": "Público-alvo do serviço 2.",
+                    "requisitos": "Requisitos para utilizar o serviço 2.",
+                    "etapas_processamento": "Etapas do processamento do serviço 2.",
+                    "custo": "Custo do serviço 2.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 2.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 2.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 2.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 2.",
+                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 2.",
+                    "outras_informacoes": "Outras informações sobre o serviço 2."
+                }
+            ]
+        },
+        {
+            "nome": "Gabinete do Prefeito",
+            "servicos": [
+                {
+                    "titulo": "Teste",
+                    "descricao": "aaaa",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 1.",
+                    "publico_alvo": "Público-alvo do serviço 1.",
+                    "requisitos": "Requisitos para utilizar o serviço 1.",
+                    "etapas_processamento": "Etapas do processamento do serviço 1.",
+                    "custo": "Custo do serviço 1.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 1.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 1.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 1.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 1.",
+                    "legislacao": "Legislação relacionada ao serviço 1.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 1.",
+                    "outras_informacoes": "Outras informações sobre o serviço 1."
+                },
+                {
+                    "titulo": "Serviço 2",
+                    "descricao": "Descrição geral do serviço 2.",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 2.",
+                    "publico_alvo": "Público-alvo do serviço 2.",
+                    "requisitos": "Requisitos para utilizar o serviço 2.",
+                    "etapas_processamento": "Etapas do processamento do serviço 2.",
+                    "custo": "Custo do serviço 2.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 2.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 2.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 2.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 2.",
+                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 2.",
+                    "outras_informacoes": "Outras informações sobre o serviço 2."
+                }
+            ]
+        },
+        {
+            "nome" : "IPS - Instituto de Previdência Social",
+            "servicos": [
+                {
+                    "titulo": "Teste",
+                    "descricao": "aaaa",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 1.",
+                    "publico_alvo": "Público-alvo do serviço 1.",
+                    "requisitos": "Requisitos para utilizar o serviço 1.",
+                    "etapas_processamento": "Etapas do processamento do serviço 1.",
+                    "custo": "Custo do serviço 1.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 1.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 1.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 1.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 1.",
+                    "legislacao": "Legislação relacionada ao serviço 1.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 1.",
+                    "outras_informacoes": "Outras informações sobre o serviço 1."
+                }
+            ]
+        },
+        {
+            "nome" : "CIM - Controladoria Interna do Município",
+            "servicos": [
+                {
+                    "titulo": "Teste",
+                    "descricao": "aaaa",
+                    "orgao_responsavel": "Órgão responsável pelo serviço 1.",
+                    "publico_alvo": "Público-alvo do serviço 1.",
+                    "requisitos": "Requisitos para utilizar o serviço 1.",
+                    "etapas_processamento": "Etapas do processamento do serviço 1.",
+                    "custo": "Custo do serviço 1.",
+                    "prazo_maximo": "Prazo máximo para atendimento do serviço 1.",
+                    "canais_comunicacao": "Canais de comunicação ao usuário para o serviço 1.",
+                    "manifestacoes_usuario": "Canais de apresentação de manifestação do usuário para o serviço 1.",
+                    "compromisso_atendimento": "Compromisso de atendimento do serviço 1.",
+                    "legislacao": "Legislação relacionada ao serviço 1.",
+                    "equipe_responsavel": "Equipe responsável pelas informações do serviço 1.",
+                    "outras_informacoes": "Outras informações sobre o serviço 1."
+                }
+            ]
+        }
+    ]
+}
