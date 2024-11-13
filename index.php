@@ -69,6 +69,20 @@ $totalPaginas = ceil($totalServicos / $servicosPorPagina);
         <div class="content">
             <!-- Aqui ha a verificacao se uma secretaria foi selecionada para ocorrer a listagem dos serviços referente a ela, por isso o ! no segundo parametro, pois caso nao for selecionado nenhum
             serviço, sera verdade, ja que seu valor sera null -->
+            
+            <?php if ($servicoSelecionado == null): ?>
+                <h1>Todos os serviços listados</h1>
+                <?php
+                    foreach($data['secretarias'] as $secretaria)
+                    {
+                        foreach($secretaria as $view_all_services)
+                        {
+                            echo "<h2>" . $view_all_services . "</h2>";
+                        }
+                    }
+                ?>
+                <?php endif; ?>
+
             <?php if ($secretariaSelecionada && !$servicoSelecionado): ?>
                 <h2>Serviços em <?php echo htmlspecialchars($secretariaSelecionada); ?></h2>
                 <ul>
@@ -82,6 +96,7 @@ $totalPaginas = ceil($totalServicos / $servicosPorPagina);
                         echo "<li><h3><a href='?secretaria=" . urlencode($secretariaSelecionada) . "&servico=" . urlencode($servico['titulo']) . "'>" . htmlspecialchars($servico['titulo']) . "</a></h3>";
                         echo "<p>" . htmlspecialchars($servico['descricao']) . "</p></li>";
                     }
+
                     ?>
                 </ul>
 
