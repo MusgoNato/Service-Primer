@@ -1,0 +1,3 @@
+[submodule "Service-Prime"]
+	path = Service-Prime
+	url = https://github.com/MusgoNato/Service-Primer.git
