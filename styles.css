@@ -1,0 +1,78 @@
+/* Estilos CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+.container 
+{ 
+    display: flex; width: 100%; 
+}
+.sidebar 
+{
+    width: 25%; background-color: #f4f4f4; padding: 20px; border-right: 2px solid #ddd; box-sizing: border-box;
+}
+.sidebar h1
+{
+    font-size: 1.5em; color: #333; margin-bottom: 1em;
+}
+.sidebar ul 
+{
+    list-style: none; padding: 0; 
+}
+.sidebar ul li 
+{
+    margin-bottom: 10px; 
+}
+.sidebar ul li a 
+{
+    text-decoration: none; color: #007bff; font-weight: bold; 
+}
+.sidebar ul li a:hover 
+{
+    text-decoration: underline; color: #0056b3; 
+}
+.content 
+{
+    width: 75%; padding: 20px; box-sizing: border-box;
+}
+.content h2 
+{ 
+    font-size: 1.5em; color: #333; margin-bottom: 1em; 
+}
+.content ul 
+{ 
+    list-style: none; padding: 0; 
+}
+.content ul li 
+{
+    margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;
+}
+.content ul li h3
+{ 
+    font-size: 1.2em; color: #333; margin: 0; 
+}
+.content ul li p { margin: 5px 0 0; color: #666; 
+}
+.pagination 
+{
+    margin-top: 20px;
+}
+.pagination a 
+{
+    text-decoration: none; padding: 8px 12px; border: 1px solid #007bff; color: #007bff; margin-right: 5px;
+}
+.pagination a:hover 
+{ 
+    background-color: #007bff; color: #fff; 
+}
+.service-detail dt 
+{
+    font-weight: bold;
+}
+.service-detail dd 
+{
+    margin: 0 0 10px;
+}
