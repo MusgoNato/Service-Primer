@@ -15,11 +15,12 @@ $servicosPorPagina = 4; // Quantidade de serviços por página, aqui eh o contro
 
 // Aqui eh criado um vetor, contera os servicos referente a qual secretaria for selecionada
 $servicos = [];
-foreach ($data['secretarias'] as $secretaria) {
-
+foreach ($data['secretarias'] as $secretaria) 
+{
     //Como foi validado pelo isset acima que esta variavel existe, entt comparo com a secretaria que foi selecionada, caso encontrado, tenho os serviços referente a secretaria selecionada.
     //Secretaria eh um vetor, entt existe um ou mais serviços, isso no arquivo .json, sendo a base de dados.
-    if ($secretaria['nome'] === $secretariaSelecionada) {
+    if ($secretaria['nome'] === $secretariaSelecionada) 
+    {
         $servicos = $secretaria['servicos'];
         break;
     }
@@ -76,7 +77,8 @@ $totalPaginas = ceil($totalServicos / $servicosPorPagina);
                     $servicosPagina = array_slice($servicos, ($paginaAtual - 1) * $servicosPorPagina, $servicosPorPagina);
 
                     //Como o vetor foi cortado de acordo com a pagina atual que o usuario esta, entao obtenho um vetor cortado, varro ele pois sera as paginas referente a secretaria selecionada
-                    foreach ($servicosPagina as $servico) {
+                    foreach ($servicosPagina as $servico) 
+                    {
                         echo "<li><h3><a href='?secretaria=" . urlencode($secretariaSelecionada) . "&servico=" . urlencode($servico['titulo']) . "'>" . htmlspecialchars($servico['titulo']) . "</a></h3>";
                         echo "<p>" . htmlspecialchars($servico['descricao']) . "</p></li>";
                     }
@@ -102,29 +104,31 @@ $totalPaginas = ceil($totalServicos / $servicosPorPagina);
                 <!-- Caso um serviço seja selecionado, lista seu conteudo de acordo com os dados no arquivo .json -->
                 <?php
                 // Exibe o serviço selecionado
-                foreach ($data['secretarias'] as $secretaria) {
-                    if ($secretaria['nome'] === $secretariaSelecionada) {
-                        foreach ($secretaria['servicos'] as $servico) {
-                            if ($servico['titulo'] === $servicoSelecionado) {
-                                echo "<h2>" . htmlspecialchars($servico['titulo']) . "</h2>";
-                                echo "<div class='service-detail'>";
-                                echo "<dl>";
-                                echo "<dt>Descrição do Serviço:</dt><dd>" . htmlspecialchars($servico['descricao']) . "</dd>";
-                                echo "<dt>Órgão Responsável:</dt><dd>" . htmlspecialchars($servico['orgao_responsavel']) . "</dd>";
-                                echo "<dt>Público Alvo:</dt><dd>" . htmlspecialchars($servico['publico_alvo']) . "</dd>";
-                                echo "<dt>Requisitos para Utilização:</dt><dd>" . htmlspecialchars($servico['requisitos']) . "</dd>";
-                                echo "<dt>Etapas do Processamento:</dt><dd>" . htmlspecialchars($servico['etapas_processamento']) . "</dd>";
-                                echo "<dt>Custo do Serviço:</dt><dd>" . htmlspecialchars($servico['custo']) . "</dd>";
-                                echo "<dt>Prazo Máximo para Atendimento:</dt><dd>" . htmlspecialchars($servico['prazo_maximo']) . "</dd>";
-                                echo "<dt>Canais de Comunicação ao Usuário:</dt><dd>" . htmlspecialchars($servico['canais_comunicacao']) . "</dd>";
-                                echo "<dt>Canais de Manifestação do Usuário:</dt><dd>" . htmlspecialchars($servico['manifestacoes_usuario']) . "</dd>";
-                                echo "<dt>Compromisso de Atendimento:</dt><dd>" . htmlspecialchars($servico['compromisso_atendimento']) . "</dd>";
-                                echo "<dt>Legislação:</dt><dd>" . htmlspecialchars($servico['legislacao']) . "</dd>";
-                                echo "<dt>Equipe Responsável:</dt><dd>" . htmlspecialchars($servico['equipe_responsavel']) . "</dd>";
-                                echo "<dt>Outras Informações:</dt><dd>" . htmlspecialchars($servico['outras_informacoes']) . "</dd>";
-                                echo "</dl>";
-                                echo "</div>";
-                            }
+                foreach ($data['secretarias'] as $secretaria)
+                {
+                    foreach ($secretaria['servicos'] as $servico)
+                    {
+                        if ($servico['titulo'] === $servicoSelecionado)
+                        {
+                            echo "<h2>" . htmlspecialchars($servico['titulo']) . "</h2>";
+                            echo "<div class='service-detail'>";
+                            echo "<dl>";
+                            echo "<dt>Descrição do Serviço:</dt><dd>" . htmlspecialchars($servico['descricao']) . "</dd>";
+                            echo "<dt>Órgão Responsável:</dt><dd>" . htmlspecialchars($servico['local_de_acesso']) . "</dd>";
+                            echo "<dt>Público Alvo:</dt><dd>" . htmlspecialchars($servico['canais_de_acesso_link']) . "</dd>";
+                            echo "<dt>Requisitos para Utilização:</dt><dd>" . htmlspecialchars($servico['forma_de_solicitação']) . "</dd>";
+                            echo "<dt>Etapas do Processamento:</dt><dd>" . htmlspecialchars($servico['publico_alvo']) . "</dd>";
+                            echo "<dt>Custo do Serviço:</dt><dd>" . htmlspecialchars($servico['categoria_do_servico']) . "</dd>";
+                            echo "<dt>Prazo Máximo para Atendimento:</dt><dd>" . htmlspecialchars($servico['setor_inicial']) . "</dd>";
+                            echo "<dt>Canais de Comunicação ao Usuário:</dt><dd>" . htmlspecialchars($servico['documentos_obrigatorios']) . "</dd>";
+                            echo "<dt>Canais de Manifestação do Usuário:</dt><dd>" . htmlspecialchars($servico['legislacao']) . "</dd>";
+                            echo "<dt>Compromisso de Atendimento:</dt><dd>" . htmlspecialchars($servico['observacoes']) . "</dd>";
+                            echo "<dt>Legislação:</dt><dd>" . htmlspecialchars($servico['tipo']) . "</dd>";
+                            echo "<dt>Equipe Responsável:</dt><dd>" . htmlspecialchars($servico['tempo_estimado_dias']) . "</dd>";
+                            echo "<dt>Outras Informações:</dt><dd>" . htmlspecialchars($servico['custo_de_servico']) . "</dd>";
+                            echo "<dt>Canais de Comunicação:</dt><dd> ". htmlspecialchars($servico['canais_de_comunicacao']) . "</dd>";
+                            echo "</dl>";
+                            echo "</div>";
                         }
                     }
                 }
