@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
-<img src="img-site/pagina.png" alt="Pagina do Site">
+<img src="video-site/video.gif" alt="Pagina do Site">
 
 > Página para Cartilha de Serviços do Município de Rio Brilhante
 
