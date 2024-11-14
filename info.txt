@@ -1,0 +1,10 @@
+O repositorio esta na branch master. 
+Para enviar as modificações para o repositorio remoto
+Tem que dar o seguinte comando:
+git add .
+git commit -m "Comentario aqui"
+git push Service-Primer [nome da sua branch aqui]
+
+O Service-Primer equivale a origin, o origin ao inicializar
+o repositorio foi trocado pelo nome Service-Primer,
+entao o comando mudara analogamente a mudança feita.
