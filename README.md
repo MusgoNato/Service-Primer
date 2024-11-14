@@ -18,7 +18,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 - Você instalou a versão mais recente do `XAMPP`
 - Você tem uma máquina `<Windows / Linux / Mac>`.
 
-## 🚀 Veja o Projeto <Página-para-Cartilha-de-Serviços-do-Município-de-Rio-Brilhante>
+## 🚀 Veja o Projeto
 
 Siga estas etapas:
 
