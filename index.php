@@ -140,7 +140,31 @@ $totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA);
 
         <!-- Conteúdo de Serviços relacionados a secretaria selecionada-->
         <div class="content">
-            
+            <!-- Add search form -->
+            <form method="GET" class="search-form">
+                    <input type="hidden" name="secretaria" value="<?php echo htmlspecialchars($secretariaSelecionada); ?>">
+                    <input type="hidden" name="pagina" value="1">
+                    <input type="text" name="search" value="<?php echo htmlspecialchars($searchTerm); ?>" placeholder="Buscar serviços..." class="search-input">
+                    <button type="submit" class="search-button">Buscar</button>
+                    <?php if ($searchTerm): ?>
+                        <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>" class="clear-search">Limpar busca</a>
+                    <?php endif; ?>
+                </form>
+
+                <!-- Add search results count -->
+                <?php if ($searchTerm): ?>
+                    <div class="search-results-count">
+                        <?php echo count($servicos); ?> serviço(s) encontrado(s) para "<?php echo htmlspecialchars($searchTerm); ?>"
+                    </div>
+                <?php endif; ?>
+
+                <!-- No results message -->
+                <?php if (empty($servicos) && $searchTerm): ?>
+                    <div class="no-results">
+                        Nenhum serviço encontrado para sua busca. Tente outros termos.
+                    </div>
+                <?php endif; ?>
+                
             <!-- Caso nao sejam selecionados nenhum servico, eh listado todos eles juntamente com a url referente ao servico em especifico -->
             <?php if (!$secretariaSelecionada): ?>
                 <h1>Todos os serviços listados</h1>
@@ -197,59 +221,13 @@ $totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA);
             <?php endif; ?>
             
             <!-- Aqui ha a verificacao se uma secretaria foi selecionada para ocorrer a listagem dos serviços referente a ela, por isso o ! no segundo parametro, pois caso nao for selecionado nenhum
-            serviço, sera verdade, ja que seu valor sera null -->
+            serviço, sera verdade, ja que seu valor sera null
             <?php if ($secretariaSelecionada && !$servicoSelecionado): ?>
-                <h2>Serviços em <?php echo htmlspecialchars($secretariaSelecionada); ?></h2>
-                <ul>
-                    <?php
-                    // Exibir os serviços da secretaria selecionada, respeitando a paginação. Obs: Precisa ser -1 o offset para nao acessar um elemento fora do array que vai de [0, total de paginas];
-                    $servicosPagina = array_slice($servicos, ($paginaAtual - 1) * SERVICOS_POR_PAGINA, SERVICOS_POR_PAGINA);
-
-                    //Como o vetor foi cortado de acordo com a pagina atual que o usuario esta, entao obtenho um vetor cortado, varro ele pois sera as paginas referente a secretaria selecionada
-                    foreach ($servicosPagina as $servico) 
-                    {
-                        echo "<li><h3><a href='?secretaria=" . urlencode($secretariaSelecionada) . "&servico=" . urlencode($servico['titulo']) . "'>" . htmlspecialchars($servico['titulo']) . "</a></h3>";
-                        echo "<p>" . htmlspecialchars($servico['descricao']) . "</p></li>";
-                    }
-
-                    ?>
-
-                <!-- Add category filter buttons -->
 
                 <!-- Add category results count -->
                 <?php if ($categoryFilter): ?>
                     <div class="category-results-count">
                         <?php echo count($servicos); ?> serviço(s) encontrado(s) para a categoria "<?php echo htmlspecialchars($categoryFilter); ?>"
-                    </div>
-                <?php endif; ?>
-
-                <!-- Add search form -->
-                <form method="GET" class="search-form">
-                    <input type="hidden" name="secretaria" value="<?php echo htmlspecialchars($secretariaSelecionada); ?>">
-                    <input type="hidden" name="pagina" value="1">
-                    <input type="text"
-                           name="search"
-                           value="<?php echo htmlspecialchars($searchTerm); ?>"
-                           placeholder="Buscar serviços..."
-                           class="search-input">
-                    <button type="submit" class="search-button">Buscar</button>
-                    <?php if ($searchTerm): ?>
-                        <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>"
-                           class="clear-search">Limpar busca</a>
-                    <?php endif; ?>
-                </form>
-
-                <!-- Add search results count -->
-                <?php if ($searchTerm): ?>
-                    <div class="search-results-count">
-                        <?php echo count($servicos); ?> serviço(s) encontrado(s) para "<?php echo htmlspecialchars($searchTerm); ?>"
-                    </div>
-                <?php endif; ?>
-
-                <!-- No results message -->
-                <?php if (empty($servicos) && $searchTerm): ?>
-                    <div class="no-results">
-                        Nenhum serviço encontrado para sua busca. Tente outros termos.
                     </div>
                 <?php endif; ?>
 
