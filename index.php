@@ -37,7 +37,7 @@ if ($searchTerm) {
     }
 
     // Aplica o filtro de busca em todos os serviços
-    $todosServicos = array_filter($todosServicos, function($servico) use ($searchTerm) {
+    $todosServicos = array_filter($todosServicos, function ($servico) use ($searchTerm) {
         return (
             stripos($servico['titulo'], $searchTerm) !== false ||
             stripos($servico['descricao'], $searchTerm) !== false
@@ -53,7 +53,7 @@ foreach ($data['secretarias'] as $secretaria) {
 
         // Apply category filter if set
         if ($categoryFilter) {
-            $servicos = array_filter($servicos, function($servico) use ($categoryFilter) {
+            $servicos = array_filter($servicos, function ($servico) use ($categoryFilter) {
                 return $servico['publico_alvo'] === $categoryFilter;
             });
             $servicos = array_values($servicos);
@@ -61,6 +61,7 @@ foreach ($data['secretarias'] as $secretaria) {
         break;
     }
 }
+
 
 // Se houver resultados da busca global, use-os em vez dos serviços da secretaria selecionada
 if ($searchTerm && !empty($todosServicos)) {
@@ -71,47 +72,43 @@ if ($searchTerm && !empty($todosServicos)) {
 $totalServicos = count($servicos);
 
 // Particiona o numero de paginas para nao ser pesado da propria pagina carregar o conteudo
-$totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA); 
+$totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA);
 
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Serviços por Secretaria</title>
 </head>
+
 <body>
     <div class="container">
         <!-- Sidebar das secretarias -->
         <div class="sidebar">
-            <div id="Categorias">
-                <ul>
-                    <!-- Botão para listar todos os serviços -->
-                    <li><h1><a href="?pagina=1">Listagem de todos os serviços</a></h1></li>
-                </ul>
-            </div>
             <!-- Adiciona os filtros de categoria no topo da sidebar -->
             <div class="category-filters">
                 <h1>Categorias</h1>
                 <ul>
                     <li>
                         <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?><?php echo $categoryFilter === 'servidor' ? '' : '&categoria=servidor'; ?>"
-                           class="<?php echo $categoryFilter === 'servidor' ? 'active' : ''; ?>">
+                            class="<?php echo $categoryFilter === 'servidor' ? 'active' : ''; ?>">
                             Servidor
                         </a>
                     </li>
                     <li>
                         <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?><?php echo $categoryFilter === 'empresa' ? '' : '&categoria=empresa'; ?>"
-                           class="<?php echo $categoryFilter === 'empresa' ? 'active' : ''; ?>">
+                            class="<?php echo $categoryFilter === 'empresa' ? 'active' : ''; ?>">
                             Empresa
                         </a>
                     </li>
                     <li>
                         <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?><?php echo $categoryFilter === 'cidadao' ? '' : '&categoria=cidadao'; ?>"
-                           class="<?php echo $categoryFilter === 'cidadao' ? 'active' : ''; ?>">
+                            class="<?php echo $categoryFilter === 'cidadao' ? 'active' : ''; ?>">
                             Cidadão
                         </a>
                     </li>
@@ -121,6 +118,9 @@ $totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA);
             <h1>Secretarias</h1>
             <ul>
                 <!-- Por meio de um for, apresento as secretarias disponiveis para o usuario, pegando os dados do json que foi lido no começo deste arquivo -->
+                <li>
+                    <a href="?pagina=1">Todas as Secretarias</a>
+                </li>
                 <?php foreach ($data['secretarias'] as $secretaria): ?>
                     <li>
                         <!-- O urlencode codifica o nome passado para fixar na url do link a ser passado, eh usado pois precisa passar a informação para próxima pagina, ela funciona tambem
@@ -134,7 +134,7 @@ $totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA);
                             <?php echo htmlspecialchars($secretaria['nome']); ?>
                         </a>
                     </li>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
             </ul>
         </div>
 
@@ -142,136 +142,151 @@ $totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA);
         <div class="content">
             <!-- Add search form -->
             <form method="GET" class="search-form">
-                    <input type="hidden" name="secretaria" value="<?php echo htmlspecialchars($secretariaSelecionada); ?>">
-                    <input type="hidden" name="pagina" value="1">
-                    <input type="text" name="search" value="<?php echo htmlspecialchars($searchTerm); ?>" placeholder="Buscar serviços..." class="search-input">
-                    <button type="submit" class="search-button">Buscar</button>
-                    <?php if ($searchTerm): ?>
-                        <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>" class="clear-search">Limpar busca</a>
-                    <?php endif; ?>
-                </form>
-
-                <!-- Add search results count -->
+                <input type="hidden" name="secretaria" value="<?php echo htmlspecialchars($secretariaSelecionada); ?>">
+                <input type="hidden" name="pagina" value="1">
+                <input type="text" name="search" value="<?php echo htmlspecialchars($searchTerm); ?>" placeholder="Buscar serviços..." class="search-input">
+                <button type="submit" class="search-button">Buscar</button>
                 <?php if ($searchTerm): ?>
-                    <div class="search-results-count">
-                        <?php echo count($servicos); ?> serviço(s) encontrado(s) para "<?php echo htmlspecialchars($searchTerm); ?>"
-                    </div>
+                    <a href="?<?php echo $secretariaSelecionada ? 'secretaria=' . urlencode($secretariaSelecionada) : ''; ?>" class="clear-search">Limpar busca</a>
                 <?php endif; ?>
+            </form>
 
-                <!-- No results message -->
-                <?php if (empty($servicos) && $searchTerm): ?>
-                    <div class="no-results">
-                        Nenhum serviço encontrado para sua busca. Tente outros termos.
-                    </div>
-                <?php endif; ?>
-                
-            <!-- Caso nao sejam selecionados nenhum servico, eh listado todos eles juntamente com a url referente ao servico em especifico -->
+            <!-- Add search results count -->
+            <?php if ($searchTerm): ?>
+            <?php endif; ?>
+
             <?php if (!$secretariaSelecionada): ?>
                 <h1>Todos os serviços listados</h1>
 
-                <!-- Crio mais um vetor com todos os serviços e depois crio uma url para listagem dos serviços -->
                 <?php
-
-                    $listagem_servicos = [];
-                    foreach($data['secretarias'] as $secretaria)
-                    {
-                        // Varro os serviços de todas as secretarias
-                        foreach($secretaria['servicos'] as $servico)
-                        {
-                            $listagem_servicos[] = 
-                            [
-                                'nomesecretaria' => $secretaria['nome'],
-                                'titulodoservico' => $servico['titulo']
-                            ];
-                        }
+                $listagem_servicos = [];
+                foreach ($data['secretarias'] as $secretaria) {
+                    foreach ($secretaria['servicos'] as $servico) {
+                        $listagem_servicos[] = [
+                            'nomesecretaria' => $secretaria['nome'],
+                            'titulodoservico' => $servico['titulo'],
+                            'descricaodoservico' => $servico['descricao'],
+                            'publicoalvo' => $servico['publico_alvo']
+                        ];
                     }
+                }
+                if ($categoryFilter) {
+                    $listagem_servicos = array_filter($listagem_servicos, function ($servico) use ($categoryFilter) {
+                        return $servico['publicoalvo'] === $categoryFilter;
+                    });
+                    $listagem_servicos = array_values($listagem_servicos);
+                }
+                // Apply search filter if search term exists
+                if ($searchTerm) {
+                    $listagem_servicos = array_filter($listagem_servicos, function ($servico) use ($searchTerm) {
+                        return (
+                            stripos($servico['titulodoservico'], $searchTerm) !== false ||
+                            stripos($servico['descricaodoservico'], $searchTerm) !== false
+                        );
+                    });
+                    $listagem_servicos = array_values($listagem_servicos);
 
-                    // Calcule o total de páginas
-                    $totalServicos = count($listagem_servicos);
-                    $totalPaginas = ceil($totalServicos / QUANT_LISTAGEM_SEM_SERVICO_SELECIONADO);
+                    // Add search results count
+                    echo '<div class="search-results-count">';
+                    echo count($listagem_servicos) . ' serviço(s) encontrado(s) para "' . htmlspecialchars($searchTerm) . '"';
+                    echo '</div>';
+                }
 
-                    // Verifique qual é a página atual (defina como 1 se não for especificada)
-                    $paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
-
-                    // Calcule o índice inicial e final para a página atual
-                    $inicio = ($paginaAtual - 1) * QUANT_LISTAGEM_SEM_SERVICO_SELECIONADO;
-                    $servicosPaginaAtual = array_slice($listagem_servicos, $inicio, QUANT_LISTAGEM_SEM_SERVICO_SELECIONADO);
-
-                    // Exiba os serviços da página atual
-                    foreach ($servicosPaginaAtual as $servico)
-                    {
-                        echo "<li><h3><a href='?secretaria=" . urlencode($servico['nomesecretaria']) . "&servico=" . urlencode($servico['titulodoservico']) . "'>" . htmlspecialchars($servico['titulodoservico']) . "</a></h3></li>";
-                    }
-                ?>    
-                    <!-- Botões de Paginação -->
-                    <div class="pagination">
-                        <!-- Cada botao eh um link, onde eh construido uma url para ele, assim posso navegar entre as paginas somente pelo link construido dentro do botão-->
-                        <?php if ($paginaAtual > 1): ?>
-                            <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&pagina=<?php echo $paginaAtual - 1; ?>">Anterior</a>
-                        <?php endif; ?>
-
-                        <?php if ($paginaAtual < $totalPaginas): ?>
-                            <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&pagina=<?php echo $paginaAtual + 1; ?>">Próximo</a>
-                        <?php endif; ?>
-
-                        <!-- Botão para a Última Página -->
-                        <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&pagina=<?php echo $totalPaginas; ?>">Último</a>
+                // Show no results message if needed
+                if (empty($listagem_servicos) && $searchTerm): ?>
+                    <div class="no-results">
+                        Nenhum serviço encontrado para sua busca. Tente outros termos.
                     </div>
-                           
+                <?php endif;
+
+                // Calculate pagination
+                $totalServicos = count($listagem_servicos);
+                $totalPaginas = ceil($totalServicos / QUANT_LISTAGEM_SEM_SERVICO_SELECIONADO);
+
+                // Get current page services
+                $paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+                $inicio = ($paginaAtual - 1) * QUANT_LISTAGEM_SEM_SERVICO_SELECIONADO;
+                $servicosPaginaAtual = array_slice($listagem_servicos, $inicio, QUANT_LISTAGEM_SEM_SERVICO_SELECIONADO);
+
+                // Display services
+                echo "<ul>"; // Adiciona a tag de abertura da lista
+                foreach ($servicosPaginaAtual as $servico) {
+                    echo "<li>
+                            <h3>
+                                <a href='?secretaria=" . urlencode($servico['nomesecretaria']) . "&servico=" . urlencode($servico['titulodoservico']) . "'>"
+                                    . htmlspecialchars($servico['titulodoservico']) .
+                                "</a>
+                            </h3>
+                            <p>" . htmlspecialchars($servico['descricaodoservico']) . "</p>
+                          </li>";
+                }
+                echo "</ul>"; // Adiciona a tag de fechamento da lista
+                ?>
+
+                <!-- Update pagination links to include search term -->
+                <div class="pagination">
+                    <?php if ($paginaAtual > 1): ?>
+                        <a href="?pagina=<?php echo $paginaAtual - 1; ?><?php echo $searchTerm ? '&search=' . urlencode($searchTerm) : ''; ?>">Anterior</a>
+                    <?php endif; ?>
+
+                    <?php if ($paginaAtual < $totalPaginas): ?>
+                        <a href="?pagina=<?php echo $paginaAtual + 1; ?><?php echo $searchTerm ? '&search=' . urlencode($searchTerm) : ''; ?>">Próximo</a>
+                    <?php endif; ?>
+
+                    <a href="?pagina=<?php echo $totalPaginas; ?><?php echo $searchTerm ? '&search=' . urlencode($searchTerm) : ''; ?>">Último</a>
+                </div>
+
             <?php endif; ?>
-            
+
             <!-- Aqui ha a verificacao se uma secretaria foi selecionada para ocorrer a listagem dos serviços referente a ela, por isso o ! no segundo parametro, pois caso nao for selecionado nenhum
             serviço, sera verdade, ja que seu valor sera null
             <?php if ($secretariaSelecionada && !$servicoSelecionado): ?>
 
                 <!-- Add category results count -->
-                <?php if ($categoryFilter): ?>
-                    <div class="category-results-count">
-                        <?php echo count($servicos); ?> serviço(s) encontrado(s) para a categoria "<?php echo htmlspecialchars($categoryFilter); ?>"
-                    </div>
+            <?php if ($categoryFilter): ?>
+                <div class="category-results-count">
+                    <?php echo count($servicos); ?> serviço(s) encontrado(s) para a categoria "<?php echo htmlspecialchars($categoryFilter); ?>"
+                </div>
+            <?php endif; ?>
+
+            <!-- Existing services list code continues here -->
+            <ul>
+                <?php
+                $servicosPagina = array_slice($servicos, ($paginaAtual - 1) * $servicosPorPagina, $servicosPorPagina);
+                foreach ($servicosPagina as $servico): ?>
+                    <li>
+                        <h3>
+                            <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&servico=<?php echo urlencode($servico['titulo']); ?>">
+                                <?php echo htmlspecialchars($servico['titulo']); ?>
+                            </a>
+                        </h3>
+                        <p><?php echo htmlspecialchars($servico['descricao']); ?></p>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+
+            <!-- Botões de Paginação -->
+            <div class="pagination">
+                <!-- Cada botao eh um link, onde eh construido uma url para ele, assim posso navegar entre as paginas somente pelo link construido dentro do botão-->
+                <?php if ($paginaAtual > 1): ?>
+                    <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&pagina=<?php echo $paginaAtual - 1; ?>&search=<?php echo urlencode($searchTerm); ?>">Anterior</a>
                 <?php endif; ?>
 
-                <!-- Existing services list code continues here -->
-                <ul>
-                    <?php
-                    $servicosPagina = array_slice($servicos, ($paginaAtual - 1) * $servicosPorPagina, $servicosPorPagina);
-                    foreach ($servicosPagina as $servico): ?>
-                        <li>
-                            <h3>
-                                <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&servico=<?php echo urlencode($servico['titulo']); ?>">
-                                    <?php echo htmlspecialchars($servico['titulo']); ?>
-                                </a>
-                            </h3>
-                            <p><?php echo htmlspecialchars($servico['descricao']); ?></p>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
+                <?php if ($paginaAtual < $totalPaginas): ?>
+                    <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&pagina=<?php echo $paginaAtual + 1; ?>&search=<?php echo urlencode($searchTerm); ?>">Próximo</a>
+                <?php endif; ?>
 
-                <!-- Botões de Paginação -->
-                <div class="pagination">
-                    <!-- Cada botao eh um link, onde eh construido uma url para ele, assim posso navegar entre as paginas somente pelo link construido dentro do botão-->
-                    <?php if ($paginaAtual > 1): ?>
-                        <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&pagina=<?php echo $paginaAtual - 1; ?>&search=<?php echo urlencode($searchTerm); ?>">Anterior</a>
-                    <?php endif; ?>
+                <!-- Botão para a Última Página -->
+                <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&pagina=<?php echo $totalPaginas; ?>&search=<?php echo urlencode($searchTerm); ?>">Último</a>
+            </div>
+        <?php elseif ($secretariaSelecionada && $servicoSelecionado): ?>
 
-                    <?php if ($paginaAtual < $totalPaginas): ?>
-                        <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&pagina=<?php echo $paginaAtual + 1; ?>&search=<?php echo urlencode($searchTerm); ?>">Próximo</a>
-                    <?php endif; ?>
-
-                    <!-- Botão para a Última Página -->
-                    <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&pagina=<?php echo $totalPaginas; ?>&search=<?php echo urlencode($searchTerm); ?>">Último</a>
-                </div>
-            <?php elseif ($secretariaSelecionada && $servicoSelecionado): ?>
-
-                <!-- Caso um serviço seja selecionado, lista seu conteudo de acordo com os dados no arquivo .json -->
-                <?php
+            <!-- Caso um serviço seja selecionado, lista seu conteudo de acordo com os dados no arquivo .json -->
+            <?php
                 // Exibe o serviço selecionado
-                foreach ($data['secretarias'] as $secretaria)
-                {
-                    foreach ($secretaria['servicos'] as $servico)
-                    {
-                        if ($servico['titulo'] === $servicoSelecionado)
-                        {
+                foreach ($data['secretarias'] as $secretaria) {
+                    foreach ($secretaria['servicos'] as $servico) {
+                        if ($servico['titulo'] === $servicoSelecionado) {
                             echo "<h2>" . htmlspecialchars($servico['titulo']) . "</h2>";
                             echo "<div class='service-detail'>";
                             echo "<dl>";
@@ -288,15 +303,16 @@ $totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA);
                             echo "<dt>Legislação:</dt><dd>" . htmlspecialchars($servico['tipo']) . "</dd>";
                             echo "<dt>Equipe Responsável:</dt><dd>" . htmlspecialchars($servico['tempo_estimado_dias']) . "</dd>";
                             echo "<dt>Outras Informações:</dt><dd>" . htmlspecialchars($servico['custo_de_servico']) . "</dd>";
-                            echo "<dt>Canais de Comunicação:</dt><dd> ". htmlspecialchars($servico['canais_de_comunicacao']) . "</dd>";
+                            echo "<dt>Canais de Comunicação:</dt><dd> " . htmlspecialchars($servico['canais_de_comunicacao']) . "</dd>";
                             echo "</dl>";
                             echo "</div>";
                         }
                     }
                 }
-                ?>
-            <?php endif; ?>
+            ?>
+        <?php endif; ?>
         </div>
     </div>
 </body>
+
 </html>
