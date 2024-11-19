@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
 <!-- Adiciona os filtros de categoria no topo da sidebar -->
 <div class="category-filters">
     <h1>Categorias</h1>
@@ -25,22 +34,26 @@
 
 <h1>Secretarias</h1>
 <ul>
-    <!-- Por meio de um for, apresento as secretarias disponiveis para o usuario, pegando os dados do json que foi lido no começo deste arquivo -->
-    <li>
-        <a href="?pagina=1">Todas as Secretarias</a>
-    </li>
-    <?php foreach ($data['secretarias'] as $secretaria): ?>
+    <div class="Bloco-secretarias">
+        <!-- Por meio de um for, apresento as secretarias disponiveis para o usuario, pegando os dados do json que foi lido no começo deste arquivo -->
         <li>
-            <!-- O urlencode codifica o nome passado para fixar na url do link a ser passado, eh usado pois precisa passar a informação para próxima pagina, ela funciona tambem
-            para codificar espaços em branco e outros caracteres especiais que possam surgir, evitando erros -->
-            <a href="?secretaria=<?php echo urlencode($secretaria['nome']); ?>&pagina=1">
-
-                <!--Converte para uma entidade valida tipo HTML, para casos de segurança. Se for passado um codigo via url, entao o htmlspecialchars tratara essa url e convertera ela para um texto html simples,
-                evitando que aquele codigo execute, isso eh essencial neste codigo ja que os dados sao pegos via GET, um vetor global que contera os valores passados por formulario ou links via url.
-                Entao o <script> por exemplo eh convertido em &lt, isso o navegador interpreta e converte para '<', fazendo ser uma entidade html, que a paritr disso sera exibido em modo texto, evitando execuções por injeção
-                de script por meio da url-->
-                <?php echo htmlspecialchars($secretaria['nome']); ?>
-            </a>
+            <a href="?pagina=1">Todas as Secretarias</a>
         </li>
-        <?php endforeach; ?>
+        <?php foreach ($data['secretarias'] as $secretaria): ?>
+            <li>
+                <!-- O urlencode codifica o nome passado para fixar na url do link a ser passado, eh usado pois precisa passar a informação para próxima pagina, ela funciona tambem
+                para codificar espaços em branco e outros caracteres especiais que possam surgir, evitando erros -->
+                <a href="?secretaria=<?php echo urlencode($secretaria['nome']); ?>&pagina=1">
+
+                    <!--Converte para uma entidade valida tipo HTML, para casos de segurança. Se for passado um codigo via url, entao o htmlspecialchars tratara essa url e convertera ela para um texto html simples,
+                    evitando que aquele codigo execute, isso eh essencial neste codigo ja que os dados sao pegos via GET, um vetor global que contera os valores passados por formulario ou links via url.
+                    Entao o <script> por exemplo eh convertido em &lt, isso o navegador interpreta e converte para '<', fazendo ser uma entidade html, que a paritr disso sera exibido em modo texto, evitando execuções por injeção
+                    de script por meio da url-->
+                    <?php echo htmlspecialchars($secretaria['nome']); ?>
+                </a>
+            </li>
+            <?php endforeach; ?>
+    </div>
 </ul>
+</body>
+</html>

@@ -92,7 +92,8 @@ $totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <!-- Pre-carrega o css antes de eexcutar o restante dos codigos, assim evita piscamento da tela por nao carregar o css pelos navegadores -->
+    <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
     <title>Serviços por Secretaria</title>
 </head>
 
@@ -144,6 +145,7 @@ $totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA);
             <ul>
                 <?php
                 $servicosPagina = array_slice($servicos, ($paginaAtual - 1) * $servicosPorPagina, $servicosPorPagina);
+                echo "<h1>". htmlspecialchars($secretariaSelecionada) . "</h1>";
                 foreach ($servicosPagina as $servico): ?>
                     <li>
                         <h3>

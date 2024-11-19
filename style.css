@@ -1,0 +1,275 @@
+/* Estilos CSS */
+body 
+{
+    font-family: Arial, sans-serif;
+    margin: 100px;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+li 
+{
+    list-style: none;
+}
+
+.container 
+{
+    display: flex;
+    width: 100%;
+}
+
+/* Referente ao bloco que contera categorias e secretarias */
+.sidebar 
+{
+    width: 25%;
+    height: 110vh;
+    background-color: #0167a2;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+    box-sizing: border-box;
+}
+
+.sidebar h1 
+{
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.sidebar ul 
+{
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li 
+{
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a 
+{
+    text-decoration: none;
+    color: floralwhite;
+    font-weight: bold;
+}
+
+/* Referente ao bloco que exibirá o conteudo referente a busca feita*/
+.content 
+{
+    width: 75%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.content h2 
+{
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.content ul 
+{
+    list-style: none;
+    padding: 0;
+}
+
+.content ul li 
+{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.content ul li h3 
+{
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+}
+
+.content ul li p 
+{
+    margin: 5px 0 0;
+    color: #666;
+}
+
+/* Referente a paginação */
+.pagination 
+{
+    margin-top: 20px;
+}
+
+.pagination a 
+{
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: #0167a2;
+    margin-right: 5px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: #EEEEEE;
+    transition: all 0.5s ease-out;
+}
+
+.pagination a:hover 
+{
+    background-color: #EEEEEE;
+    color: #0167a2;
+}
+
+/* Referente a descrição dos serviços */
+.service-detail dt 
+{
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    margin: 10px 0;
+    border-radius: 4px;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.service-detail dd 
+{
+    margin: 0 0 10px;
+}
+
+/* Referente ao campo de busca */
+.search-form 
+{
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #0167a2;
+    border-radius: 5px;
+}
+
+.search-input 
+{
+    padding: 8px;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.search-button 
+{
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.5 ease-in-out;
+}
+
+.search-button:hover 
+{
+    background-color: #0056b3;
+    color: #EEEEEE;
+}
+
+.clear-search 
+{
+    display: inline-block;
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.clear-search:hover 
+{
+    text-decoration: underline;
+}
+
+.search-results-count 
+{
+    margin: 10px 0;
+    color: #666;
+    font-style: italic;
+}
+
+.no-results 
+{
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin: 20px 0;
+    color: #666;
+}
+
+
+/* Referente aos botões de categorias */
+.category-filters 
+{
+    margin-bottom: 25px;
+}
+
+.category-filters h1 
+{
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.category-filters ul 
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-filters li 
+{
+    margin-bottom: 8px;
+}
+
+.category-filters a 
+{
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    transition: all 0.5s ease-in-out;
+}
+
+.category-filters a:hover 
+{
+    background-color: #EEEEEE;
+    color: #0167a2;
+}
+
+.category-filters a.active 
+{
+    background-color: #EEEEEE;
+    color: #0167a2;
+}
+
+.category-results-count
+{
+    margin: 10px 0;
+    color: #4a6348;
+    font-style: italic;
+}
+
+/* Referente aos links das secretarias */
+.Bloco-secretarias a
+{
+    display: block;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    transition: all 0.5s ease-in-out;
+}
+
+.Bloco-secretarias a:hover
+{
+    background-color: #EEEEEE;
+    color: #0167a2;
+}
+

@@ -5,7 +5,7 @@
             "servicos": [
                 {
                     "titulo": "Solicitação de Licença Prêmio",
-                    "descricao": "Descrição geral do serviço 2.",
+                    "descricao": "Solicitação de avaliação do direito a Licença Prêmio, 03 meses de licença remunerada, devendo ser solicitada a cada 05 anos em efetivo exercício da função.",
                     "local_de_acesso": "1DOC",
                     "canais_de_acesso_link": "",
                     "forma_de_solicitação": "",
@@ -13,10 +13,10 @@
                     "categoria_do_servico": "Requisitos para utilizar o serviço 2.",
                     "setor_inicial": "Etapas do processamento do serviço 2.",
                     "documentos_obrigatorios": "Custo do serviço 2.",
-                    "legislacao": "Legislação relacionada ao serviço 2.",
+                    "legislacao": "Lei nº 1.047/1997 (Estatuto dos Servidores do Município de Rio Brilhante) ",
                     "observacoes": "teste se pegou ou nao",
                     "tipo": "Protocolo",
-                    "tempo_estimado_dias": "1",
+                    "tempo_estimado_dias": "15",
                     "custo_de_servico": "",
                     "canais_de_comunicacao": ""
                 },
