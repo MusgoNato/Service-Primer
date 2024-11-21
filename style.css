@@ -90,6 +90,18 @@ li
     margin: 0;
 }
 
+.content ul li h3 a 
+{
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.content ul li h3 a:hover 
+{
+    font-size: 1.2em;
+    text-decoration: underline;
+}
+
 .content ul li p 
 {
     margin: 5px 0 0;
@@ -126,9 +138,10 @@ li
     max-height: 600px;
     overflow-y: auto; 
     padding: 16px; 
-    border: 1px solid #ddd;
-    background-color: #f9f9f9; 
+    background-color: #f8f9fa;
     border-radius: 4px;
+    margin: 20px 0;
+    color: #666;
 }
 
 .service-detail dt 
@@ -140,7 +153,7 @@ li
 
 .service-detail dd 
 {
-    margin: 10px 0;
+    margin: 10px ;
     color: #555; 
     line-height: 1.5; 
 }
@@ -280,4 +293,3 @@ li
     background-color: #EEEEEE;
     color: #0167a2;
 }
-
