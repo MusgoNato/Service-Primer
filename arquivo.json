@@ -1,7 +1,7 @@
 {
     "secretarias": [
         {
-            "nome": "SADM - Secretaria Municipal de Adiministração",
+            "nome": "Secretaria Municipal de Adiministração",
             "servicos": [
                 {
                     "titulo": "Solicitação de Licença Prêmio",
@@ -465,7 +465,7 @@
             ]
         },
         {
-            "nome": "SEDUC - Secretaria Municipal de Educação",
+            "nome": "Secretaria Municipal de Educação",
             "servicos": [
                 {
                     "titulo": "Teste",
@@ -504,7 +504,7 @@
             ]
         },
         {
-            "nome": "SEINFRA - Secretaria Municipal de Infraestrutura",
+            "nome": "Secretaria Municipal de Infraestrutura",
             "servicos": [
                 {
                     "titulo": "Iluminação Pública",
@@ -543,7 +543,7 @@
             ]
         },
         {
-            "nome": "SMFPC - Secretaria Municipal de Finanças, Planejamento e Controle",
+            "nome": "Secretaria Municipal de Finanças, Planejamento e Controle",
             "servicos": [
                 {
                     "titulo": "Solicitação de Alteração ou rescisão Contratual/ARP",
@@ -582,7 +582,7 @@
             ]
         },
         {
-            "nome": "SMS - Secretaria Municipal de Saúde",
+            "nome": "Secretaria Municipal de Saúde",
             "servicos": [
                 {
                     "titulo": ";as,d;.as,d;.as",
@@ -660,7 +660,7 @@
             ]
         },
         {
-            "nome": "IPS - Instituto de Previdência Social",
+            "nome": "Instituto de Previdência Social",
             "servicos": [
                 {
                     "titulo": "Pensão pós Morte",
@@ -767,7 +767,7 @@
             ]
         },
         {
-            "nome": "CIM - Controladoria Interna do Município",
+            "nome": "Controladoria Interna do Município",
             "servicos": [
                 {
                     "titulo": "Solicitações do Ministério Público",

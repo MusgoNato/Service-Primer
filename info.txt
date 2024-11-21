@@ -1,4 +1,4 @@
-O repositorio esta na branch master. 
+O repositorio esta na branch master.
 Para enviar as modificações para o repositorio remoto
 Tem que dar o seguinte comando:
 git add .
