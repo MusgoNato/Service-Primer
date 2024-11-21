@@ -8,34 +8,19 @@ $database = "cartilha_de_serviços";
 
 try
 {
-    $conexao = new PDO("mysql:host=$host;dbname=$database", $usuario, $senha);
+    $pdo = new PDO("mysql:dbname=cartilha_de_serviços;host:localhost", $usuario, $senha);
 
-    echo "Conexao bem sucedida!";
-
-    $comando = "SELECT * FROM `cartilha`";
-
-    $consulta = $conexao->prepare($comando);
-
-    $consulta->execute();
-
-    $resultados = $consulta->fetchAll(PDO::FETCH_ASSOC);
-
-    if($resultados)
-    {
-        foreach ($resultados as $linha)
-        {
-            echo $linha["id"];
-        }
-    }
-    else
-    {
-        echo "0 resultados";
-    }
-
-    // Saida
-    $conexao = null;
-
-} catch (PDOException $excecoes)
+    echo "Deu certo";
+}catch (PDOException $e)
 {
-    echo "Erro: " . $excecoes->getMessage();
+    echo "Erro com banco de dados: " . $e->getMessage();
 }
+catch(Exception $e)
+{
+    echo "Erro generico" . $e->getMessage();
+}
+
+$res = $pdo->prepare("INSERT INTO secretaria(titulo, descricao) VALUES (:t, :d)");
+
+
+?>
