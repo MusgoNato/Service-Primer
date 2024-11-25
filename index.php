@@ -28,11 +28,11 @@ $servicos = [];
 $todosServicos = []; // Array para armazenar todos os serviços
 
 // Primeiro, coletamos todos os serviços de todas as secretarias se houver um termo de busca
-if ($searchTerm) 
+if ($searchTerm)
 {
-    foreach ($data['secretarias'] as $sec) 
+    foreach ($data['secretarias'] as $sec)
     {
-        foreach ($sec['servicos'] as $servico) 
+        foreach ($sec['servicos'] as $servico)
         {
             $servico['secretaria'] = $sec['nome']; // Adiciona a informação da secretaria ao serviço
             $todosServicos[] = $servico;
@@ -40,9 +40,9 @@ if ($searchTerm)
     }
 
     // Aplica o filtro de busca em todos os serviços
-    $todosServicos = array_filter($todosServicos, function ($servico) use ($searchTerm) 
+    $todosServicos = array_filter($todosServicos, function ($servico) use ($searchTerm)
     {
-        return 
+        return
         (
             stripos($servico['titulo'], $searchTerm) !== false ||
             stripos($servico['descricao'], $searchTerm) !== false
@@ -52,16 +52,16 @@ if ($searchTerm)
 }
 
 // Se não houver termo de busca, continua com o comportamento normal
-foreach ($data['secretarias'] as $secretaria) 
+foreach ($data['secretarias'] as $secretaria)
 {
-    if ($secretaria['nome'] === $secretariaSelecionada) 
+    if ($secretaria['nome'] === $secretariaSelecionada)
     {
         $servicos = $secretaria['servicos'];
 
         // Apply category filter if set
-        if ($categoryFilter) 
+        if ($categoryFilter)
         {
-            $servicos = array_filter($servicos, function ($servico) use ($categoryFilter) 
+            $servicos = array_filter($servicos, function ($servico) use ($categoryFilter)
             {
                 return $servico['publico_alvo'] === $categoryFilter;
             });
@@ -73,7 +73,7 @@ foreach ($data['secretarias'] as $secretaria)
 
 
 // Se houver resultados da busca global, use-os em vez dos serviços da secretaria selecionada
-if ($searchTerm && !empty($todosServicos)) 
+if ($searchTerm && !empty($todosServicos))
 {
     $servicos = $todosServicos;
 }
@@ -95,6 +95,7 @@ $totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA);
     <!-- Pre-carrega o css antes de eexcutar o restante dos codigos, assim evita piscamento da tela por nao carregar o css pelos navegadores -->
     <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
     <title>Serviços por Secretaria</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
 </head>
 
 <body>
@@ -110,10 +111,14 @@ $totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA);
             <form method="GET" class="search-form">
                 <input type="hidden" name="secretaria" value="<?php echo htmlspecialchars($secretariaSelecionada); ?>">
                 <input type="hidden" name="pagina" value="1">
-                <input type="text" name="search" value="<?php echo htmlspecialchars($searchTerm); ?>" placeholder="Buscar serviços..." class="search-input">
-                <button type="submit" class="search-button">Buscar</button>
+                <input type="text" name="search" value="<?php echo htmlspecialchars($searchTerm); ?>" placeholder="Buscar..." class="search-input">
+                <button type="submit" class="search-button">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </button>
                 <?php if ($searchTerm): ?>
-                    <a href="?<?php echo $secretariaSelecionada ? 'secretaria=' . urlencode($secretariaSelecionada) : ''; ?>" class="clear-search">Limpar busca</a>
+                    <a class='servico-link' href="?<?php echo $secretariaSelecionada ? 'secretaria=' . urlencode($secretariaSelecionada) : ''; ?>" class="clear-search">Limpar busca</a>
                 <?php endif; ?>
             </form>
 
@@ -149,7 +154,7 @@ $totalPaginas = ceil($totalServicos / SERVICOS_POR_PAGINA);
                 foreach ($servicosPagina as $servico): ?>
                     <li>
                         <h3>
-                            <a href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&servico=<?php echo urlencode($servico['titulo']); ?>">
+                            <a class='servico-link' href="?secretaria=<?php echo urlencode($secretariaSelecionada); ?>&servico=<?php echo urlencode($servico['titulo']); ?>">
                                 <?php echo htmlspecialchars($servico['titulo']); ?>
                             </a>
                         </h3>

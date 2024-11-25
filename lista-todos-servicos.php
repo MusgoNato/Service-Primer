@@ -7,14 +7,14 @@
     </head>
     <body>
 
-    <h1>Todos os serviços listados</h1>
+    <h1>Todos os serviços listado</h1>
         <?php
         $listagem_servicos = [];
-        foreach ($data['secretarias'] as $secretaria) 
+        foreach ($data['secretarias'] as $secretaria)
         {
-            foreach ($secretaria['servicos'] as $servico) 
+            foreach ($secretaria['servicos'] as $servico)
             {
-                $listagem_servicos[] = 
+                $listagem_servicos[] =
                 [
                     'nomesecretaria' => $secretaria['nome'],
                     'titulodoservico' => $servico['titulo'],
@@ -23,20 +23,20 @@
                 ];
             }
         }
-        if ($categoryFilter) 
+        if ($categoryFilter)
         {
-            $listagem_servicos = array_filter($listagem_servicos, function ($servico) use ($categoryFilter) 
+            $listagem_servicos = array_filter($listagem_servicos, function ($servico) use ($categoryFilter)
             {
                 return $servico['publicoalvo'] === $categoryFilter;
             });
             $listagem_servicos = array_values($listagem_servicos);
         }
         // Apply search filter if search term exists
-        if ($searchTerm) 
+        if ($searchTerm)
         {
-            $listagem_servicos = array_filter($listagem_servicos, function ($servico) use ($searchTerm) 
+            $listagem_servicos = array_filter($listagem_servicos, function ($servico) use ($searchTerm)
             {
-                return 
+                return
                 (
                     stripos($servico['titulodoservico'], $searchTerm) !== false ||
                     stripos($servico['descricaodoservico'], $searchTerm) !== false
@@ -68,11 +68,11 @@
 
         // Display services
         echo "<ul>"; // Adiciona a tag de abertura da lista
-        foreach ($servicosPaginaAtual as $servico) 
+        foreach ($servicosPaginaAtual as $servico)
         {
             echo "<li>
                     <h3>
-                        <a href='?secretaria=" . urlencode($servico['nomesecretaria']) . "&servico=" . urlencode($servico['titulodoservico']) . "'>"
+                        <a class='servico-link' href='?secretaria=" . urlencode($servico['nomesecretaria']) . "&servico=" . urlencode($servico['titulodoservico']) . "'>"
                             . htmlspecialchars($servico['titulodoservico']) .
                         "</a>
                     </h3>

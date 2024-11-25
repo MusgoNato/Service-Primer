@@ -7,11 +7,11 @@
     </head>
     <body>
         <?php
-            foreach ($data['secretarias'] as $secretaria) 
+            foreach ($data['secretarias'] as $secretaria)
             {
-                foreach ($secretaria['servicos'] as $servico) 
+                foreach ($secretaria['servicos'] as $servico)
                 {
-                    if ($servico['titulo'] === $servicoSelecionado) 
+                    if ($servico['titulo'] === $servicoSelecionado)
                     {
                         echo "<h2>" . htmlspecialchars($servico['titulo']) . "</h2>";
                         echo "<div class='service-detail'>";

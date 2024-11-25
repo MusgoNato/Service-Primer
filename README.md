@@ -24,7 +24,7 @@ Siga estas etapas:
 
 - Baixe os arquivos do repositório.
 - Instale o XAMPP para rodar um servidor local na sua máquina.
-- Após a instalação do XAMPP, mova os documentos do repositório baixado na pasta htdocs do XAMPP. 
+- Após a instalação do XAMPP, mova os documentos do repositório baixado na pasta htdocs do XAMPP.
 - Após aberto o XAMPP, em "Apache" aperte o botão Start.
 - Em seu navegador insira "localhost" e veja o projeto funcionando.
 
