@@ -286,16 +286,6 @@ li
     color: #0167a2;
 }
 
-/* Referente aos links dos serviços */
-.servico-link {
-    color: #0167a2;
-    text-decoration: none;
-}
-
-.servico-link:hover {
-    color: #00466f;
-}
-
 /* Referência páginas */
 .pagina-info {
     color: #666;
